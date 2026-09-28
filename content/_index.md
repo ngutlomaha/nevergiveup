@@ -228,7 +228,7 @@ sections:
           description: Assistance with obtaining employment and building vocational skills through NGU Homes.
         - name: Housing & Basic Needs
           icon: home
-          description: Safe and stable housing for the program duration, including provision of initial clothing, food, transportation, and cellphones.
+          description: Safe and stable housing for the program duration, including provision of initial clothing, transportation, and cellphones.
         - name: Essential Documents Assistance
           icon: identification
           description: Support with obtaining or replacing ID, Social Security cards, EBT, and Medicaid enrollment if needed.
