@@ -3,7 +3,7 @@ title: "Mike Means"
 first_name: Mike
 last_name: Means
 role: "Peer Support Specialist"
-image: "/images/aaron-wurm.jpeg"
+image: "/images/mike-means.jpeg"
 user_groups:
   - Staff
 #bio: Provides mentorship, guidance, and emotional support to participants, using lived experience with incarceration and successful reentry to foster connection and encouragement.
