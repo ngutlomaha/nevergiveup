@@ -115,11 +115,11 @@ sections:
   - block: stats
     content:
       items:
-        - statistic: "80"
+        - statistic: "90"
           description: |
             Men Admitted     
             Since March 2025
-        - statistic: "63%"
+        - statistic: "73%"
           description: |
             Program Completion Rate     
             As of March 2026
