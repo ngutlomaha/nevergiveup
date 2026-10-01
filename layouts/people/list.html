@@ -19,7 +19,7 @@
 <!-- Board of Directors Section -->
 <h2 class="section-title">Good Turn Labor Board of Directors</h2>
 <div class="team-grid">
-  {{ $boardOrder := slice "Gaylene" "Greg" "Jenny" "David" "John" "Gabe" }}
+  {{ $boardOrder := slice "Gaylene" "Greg" "Jenny" "John" "Gabe" }}
   {{ range $name := $boardOrder }}
     {{ range where $people "Params.first_name" "eq" $name }}
       <div class="team-card">
