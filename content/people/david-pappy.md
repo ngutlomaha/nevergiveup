@@ -3,7 +3,7 @@ title: "David 'Pappy' Talburt"
 first_name: David
 last_name: Talburt
 role: "Board Member"
-image: "/images/logo.png"
+image: "/images/david-pappy.jpg"
 user_groups:
   - Board
 #bio: 
