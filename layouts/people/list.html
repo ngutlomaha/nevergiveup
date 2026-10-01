@@ -53,17 +53,15 @@
 <!-- Staff Section -->
 <h2 class="section-title" style="margin-top: 5rem;">NGU Staff</h2>
 <div class="team-grid">
-
-  {{/* Exclude Board members and Program Leadership from Staff */}}
-  {{ $boardFirstNames := slice "Gaylene" "Greg" "Jenny" "David" "John" "Gabe" }}
+  {{/* Exclude both board + leadership first names */}}
+  {{ $boardFirstNames := slice "Gaylene" "Greg" "Jenny" "David" John" "Gabe" }}
   {{ $leadershipFirstNames := slice "Julie" "Shane" "Jimmy" }}
   {{ $excludeFirstNames := union $boardFirstNames $leadershipFirstNames }}
 
   {{ $staff := where $people "Params.first_name" "not in" $excludeFirstNames }}
-
-  <!-- Brian, Emily, and Susan appear first -->
+ 
   {{ range sort $staff "Params.last_name" }}
-    {{ if and (in (slice "Brian" "Emily" "Susan") .Params.first_name) (ne .Params.first_name "David") }}
+    {{ if eq .Params.first_name "Brian" "Emily" "Susan" }}
       <div class="team-card">
         <a href="{{ .RelPermalink }}">
           <img src="{{ .Params.image }}" alt="{{ .Title }}" class="team-photo" />
@@ -74,9 +72,8 @@
     {{ end }}
   {{ end }}
 
-  <!-- All other staff members -->
   {{ range sort $staff "Params.last_name" }}
-    {{ if and (not (in (slice "Brian" "Emily" "Susan") .Params.first_name) (ne .Params.first_name "David") }}
+    {{ if ne .Params.first_name "Brian" "Emily" "Susan" }}
       <div class="team-card">
         <a href="{{ .RelPermalink }}">
           <img src="{{ .Params.image }}" alt="{{ .Title }}" class="team-photo" />
@@ -86,9 +83,7 @@
       </div>
     {{ end }}
   {{ end }}
-
 </div>
-
 
 <style>
 .page-title {
