@@ -3,7 +3,7 @@ title: "Derec Umble"
 first_name: Derec
 last_name: Umble
 role: "Peer Support Specialist"
-image: "/images/derec-umble.jpeg"
+image: "/images/derec-umble.jpg"
 user_groups:
   - Staff
 #bio: Provides mentorship, guidance, and emotional support to participants, using lived experience with incarceration and successful reentry to foster connection and encouragement.

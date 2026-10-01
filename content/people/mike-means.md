@@ -3,7 +3,7 @@ title: "Mike Means"
 first_name: Mike
 last_name: Means
 role: "Peer Support Specialist"
-image: "/images/mike-means"
+image: "/images/mike-means.jpg"
 user_groups:
   - Staff
 #bio: Provides mentorship, guidance, and emotional support to participants, using lived experience with incarceration and successful reentry to foster connection and encouragement.
