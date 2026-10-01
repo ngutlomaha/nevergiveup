@@ -3,7 +3,7 @@
 
 <p class="team-description">
   The Never Give Up Transitional Living program operates under the leadership of Good Turn Labor, a nonprofit 501(c)(3), and is guided by its dedicated board of directors. The program is staffed by a team of professionals with lived experiences who are committed to providing high-quality reentry and peer support services. The team works at the reentry house and ensures that participants receive the comprehensive care and guidance they need.
- 
+
   Together, this team ensures that individuals returning from incarceration receive the comprehensive support needed to rebuild their lives, secure stable employment and housing, and successfully reintegrate into their communities.
 </p>
 
@@ -20,6 +20,7 @@
 <h2 class="section-title">Good Turn Labor Board of Directors</h2>
 <div class="team-grid">
   {{ $boardOrder := slice "Gaylene" "Greg" "Jenny" "David" "John" "Gabe" }}
+
   {{ range $name := $boardOrder }}
     {{ range where $people "Params.first_name" "eq" $name }}
       <div class="team-card">
@@ -37,6 +38,7 @@
 <h2 class="section-title">NGU Program Leadership</h2>
 <div class="team-grid">
   {{ $leadershipOrder := slice "Julie" "Shane" "Jimmy" }}
+
   {{ range $name := $leadershipOrder }}
     {{ range where $people "Params.first_name" "eq" $name }}
       <div class="team-card">
@@ -53,15 +55,17 @@
 <!-- Staff Section -->
 <h2 class="section-title" style="margin-top: 5rem;">NGU Staff</h2>
 <div class="team-grid">
-  {{/* Exclude both board + leadership first names */}}
-  {{ $boardFirstNames := slice "Gaylene" "Greg" "Jenny" "David" John" "Gabe" }}
+
+  {{/* Exclude board + leadership first names from Staff */}}
+  {{ $boardFirstNames := slice "Gaylene" "Greg" "Jenny" "David" "John" "Gabe" }}
   {{ $leadershipFirstNames := slice "Julie" "Shane" "Jimmy" }}
   {{ $excludeFirstNames := union $boardFirstNames $leadershipFirstNames }}
 
   {{ $staff := where $people "Params.first_name" "not in" $excludeFirstNames }}
- 
+
+  <!-- These staff members appear first -->
   {{ range sort $staff "Params.last_name" }}
-    {{ if eq .Params.first_name "Brian" "Emily" "Susan" }}
+    {{ if in (slice "Brian" "Emily" "Susan") .Params.first_name }}
       <div class="team-card">
         <a href="{{ .RelPermalink }}">
           <img src="{{ .Params.image }}" alt="{{ .Title }}" class="team-photo" />
@@ -72,8 +76,9 @@
     {{ end }}
   {{ end }}
 
+  <!-- All other staff members -->
   {{ range sort $staff "Params.last_name" }}
-    {{ if ne .Params.first_name "Brian" "Emily" "Susan" }}
+    {{ if not (in (slice "Brian" "Emily" "Susan") .Params.first_name) }}
       <div class="team-card">
         <a href="{{ .RelPermalink }}">
           <img src="{{ .Params.image }}" alt="{{ .Title }}" class="team-photo" />
@@ -83,6 +88,7 @@
       </div>
     {{ end }}
   {{ end }}
+
 </div>
 
 <style>
@@ -106,13 +112,13 @@
   margin-top: 4rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  color: #003366; /* Dark Blue */
+  color: #003366;
 }
 
 .team-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;  /* This centers all lines */
+  justify-content: center;
   gap: 1.5rem;
   max-width: 1000px;
   margin: 0 auto;
@@ -127,7 +133,7 @@
 }
 
 .team-card:hover .team-name {
-  color: #007ACC; /* subtle blue color on hover */
+  color: #007ACC;
 }
 
 .team-photo {
@@ -155,3 +161,4 @@
 </style>
 
 {{ end }}
+
